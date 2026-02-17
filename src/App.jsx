@@ -6,6 +6,7 @@ import Home from './core/layout/Home';
 import Login from './features/users/Login';
 import Register from './features/users/Register';
 import Profile from './features/users/Profile';
+import UserList from './features/users/UserList';
 import './core/global.scss';
 
 const App = () => {
@@ -23,6 +24,7 @@ const App = () => {
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/profile" element={<Profile />} />
+            <Route path="/users" element={<UserList />} />
           </Routes>
         </div>
       </BrowserRouter>

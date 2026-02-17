@@ -23,8 +23,13 @@ const Login = () => {
       localStorage.setItem('token', token);
       const payload = JSON.parse(atob(token.split('.')[1]));
       setUser(payload);
-      
-      navigate('/profile');
+
+      const role = payload.role || payload['http://schemas.microsoft.com/ws/2008/06/identity/claims/role'];
+      if (role === 'User') {
+        navigate('/users');
+      } else {
+        navigate('/profile');
+      }
     } catch (err) {
       if(err.response.status === 401) {
         setError('Neispravno korisničko ime ili lozinka.');

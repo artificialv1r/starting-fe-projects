@@ -54,19 +54,27 @@
   }
 }
 
-.token-display {
-  margin-top: 30px;
-  padding: 15px;
-  background-color: #e3f2fd;
-  border-radius: 4px;
+// User list
+.user-list-container {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 110px);
 
-  pre {
-    margin-top: 10px;
-    padding: 10px;
-    background-color: #263238;
-    color: #aed581;
-    border-radius: 4px;
-    overflow: auto;
-    font-size: 12px;
+  .user-list-controls {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    padding: 10px 0;
+    align-items: center;
+  }
+
+  .user-list {
+    flex: 1;
+    overflow-y: auto;
+
+    .user-row {
+      padding: 12px 15px;
+      border-bottom: 1px solid #eee;
+    }
   }
 }

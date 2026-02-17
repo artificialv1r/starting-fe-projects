@@ -23,3 +23,8 @@ export const getUserProfile = async () => {
   const response = await axiosConfig.get('/auth/profile');
   return response.data;
 };
+
+export const getUsers = async (page, pageSize) => {
+  const response = await axiosConfig.get(`/users?page=${page}&pageSize=${pageSize}`);
+  return response.data;
+};

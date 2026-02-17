@@ -19,6 +19,9 @@ const Header = () => {
       <nav>
         <div className="nav-links">
           <Link to="/">Početna</Link>
+          {user && (user.role || user['http://schemas.microsoft.com/ws/2008/06/identity/claims/role']) === 'User' && (
+            <Link to="/users">Korisnici</Link>
+          )}
           <span style={{'flexGrow':1}}></span>
           {!user && (
             <>

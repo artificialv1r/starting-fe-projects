@@ -29,11 +29,12 @@ const Home = () => {
       <div className="features-box">
         <h2>Postojeće funkcionalnosti:</h2>
         <ul>
-          <li>Registracija novih korisnika</li>
-          <li>Prijava i odjava</li>
-          <li>Interceptor za automatsko slanje JWT tokena</li>
+          <li>Registracija novih korisnika, prijava i odjava</li>
           <li>Čitanje username i role u Header komponenti</li>
+          <li>Pregled registrovanih korisnika u ulozi User</li>
+          <li>Pregled projekata odabranog korisnika</li>
         </ul>
+        <b>Prijavi se sa "alice" i "Alice123!" da vidiš sve funkcije</b>
       </div>
     </div>
   );
