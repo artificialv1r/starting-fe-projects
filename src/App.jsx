@@ -7,6 +7,7 @@ import Login from './features/users/Login';
 import Register from './features/users/Register';
 import Profile from './features/users/Profile';
 import UserList from './features/users/UserList';
+import MyProjects from './features/projects/MyProjects';
 import './core/global.scss';
 
 const App = () => {
@@ -25,6 +26,7 @@ const App = () => {
             <Route path="/register" element={<Register />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/users" element={<UserList />} />
+            <Route path="/my-projects" element={<MyProjects />} />
           </Routes>
         </div>
       </BrowserRouter>
