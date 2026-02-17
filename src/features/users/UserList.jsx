@@ -76,33 +76,22 @@ const UserList = () => {
             <option value={10}>10</option>
             <option value={20}>20</option>
           </select>
-          <button
-            className="btn btn-primary"
-            disabled={page <= 1}
-            onClick={() => setPage(page - 1)}
-          >
-            Prethodna
+          <button className="btn btn-sm" disabled={page <= 1} onClick={() => setPage(page - 1)}>
+            &lt;
           </button>
           <span>{page} / {totalPages || 1}</span>
-          <button
-            className="btn btn-primary"
-            disabled={page >= totalPages}
-            onClick={() => setPage(page + 1)}
-          >
-            Sledeća
+          <button className="btn btn-sm" disabled={page >= totalPages} onClick={() => setPage(page + 1)}>
+            &gt;
           </button>
         </div>
-
+        <hr></hr>
         <div className="user-list">
           {loading && <p>Učitavanje...</p>}
           {error && <p className="error-message">{error}</p>}
           {!loading && !error && users.map((u, index) => (
             <div key={index} className={`user-row ${selectedUserId === u.id ? 'active' : ''}`}>
               <span>{u.name} {u.surname}</span>
-              <button
-                className="btn btn-secondary btn-sm"
-                onClick={() => handleShowProjects(u.id)}
-              >
+              <button className="btn btn-sm" onClick={() => handleShowProjects(u.id)}>
                 Projekti
               </button>
             </div>
