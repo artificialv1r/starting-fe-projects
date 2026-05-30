@@ -10,6 +10,11 @@
     border-radius: 8px;
     background-color: #fff;
 
+    &--active {
+      background-color: #deeeff;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    }
+
     .project-card-header {
       display: flex;
       justify-content: space-between;
@@ -48,6 +53,15 @@
         color: #777;
       }
     }
+  }
+}
+
+.action-box {
+  display: flex;
+  gap: 20px;
+
+  .btn-publish {
+    background-color: #007bff;
   }
 }
 
