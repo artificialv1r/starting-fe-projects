@@ -30,6 +30,24 @@ const ProjectList = ({
     }
   }
 
+  async function handleComplete(id, project) {
+    try {
+      const dto = {
+        name: project.name,
+        description: project.description,
+        startedAt: project.startedAt
+          ? new Date(project.startedAt).toISOString()
+          : null,
+        completedAt: new Date().toISOString(),
+        status: "Completed",
+      };
+      await updateProject(id, dto);
+      onPublish();
+    } catch (error) {
+      setError("Failed to publish");
+    }
+  }
+
   return (
     <div className="project-list">
       {projects.map((project, index) => (
@@ -42,12 +60,20 @@ const ProjectList = ({
           <div className="project-card-header">
             <h3 className="project-name">{project.name}</h3>
             <div className="action-box">
-              {project.status === "Draft" && (
+              {onSelectProject && project.status === "Draft" && (
                 <button
                   className="btn btn-primary btn-sm btn-publish"
                   onClick={() => handlePublish(project.id, project)}
                 >
                   Objavi
+                </button>
+              )}
+              {onSelectProject && project.status === "Published" && (
+                <button
+                  className="btn btn-primary btn-sm btn-complete"
+                  onClick={() => handleComplete(project.id, project)}
+                >
+                  Zakljuci
                 </button>
               )}
               {onSelectProject && (

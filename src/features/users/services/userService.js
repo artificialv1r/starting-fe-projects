@@ -1,30 +1,45 @@
-import axiosConfig from '../../../core/axiosConfig';
+import axiosConfig from "../../../core/axiosConfig";
 
 export const loginUser = async (username, password) => {
-  const response = await axiosConfig.post('/auth/login', {
+  const response = await axiosConfig.post("/auth/login", {
     username,
-    password
+    password,
   });
   return response.data;
 };
 
-export const registerUser = async (username, email, password, name, surname) => {
-  const response = await axiosConfig.post('/auth/register', {
+export const registerUser = async (
+  username,
+  email,
+  password,
+  name,
+  surname
+) => {
+  const response = await axiosConfig.post("/auth/register", {
     email,
     username,
     password,
     name,
-    surname
+    surname,
   });
   return response.data;
 };
 
 export const getUserProfile = async () => {
-  const response = await axiosConfig.get('/auth/profile');
+  const response = await axiosConfig.get("/auth/profile");
   return response.data;
 };
 
 export const getUsers = async (page, pageSize) => {
-  const response = await axiosConfig.get(`/users?page=${page}&pageSize=${pageSize}`);
+  const response = await axiosConfig.get(
+    `/users?page=${page}&pageSize=${pageSize}`
+  );
+  return response.data;
+};
+
+export const getUsersSummary = async (page, pageSize) => {
+  const response = await axiosConfig.get(
+    `/users/summary?page=${page}&pageSize=${pageSize}`
+  );
   return response.data;
 };
