@@ -1,0 +1,21 @@
+@import "/src/core/global.scss";
+
+.cheatsheet-page {
+  width: 100%;
+  display: flex;
+  gap: 20px;
+}
+.columns {
+  display: flex;
+  flex-direction: column;
+  gap: 10;
+  width: 40%;
+
+  .card-content {
+    padding: 20px 0;
+  }
+}
+
+.active {
+  background-color: #deefff;
+}
